@@ -15,7 +15,6 @@ import datetime
 import os
 import sys
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TESTING = ((" ".join(sys.argv)).find('manage.py test') != -1)
 
@@ -173,7 +172,6 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 
-DISCUSS_UUID_LENGTH = 12
 POSTS_UUID_LENGTH = 12
 
 AUTH_USER_MODEL = 'users.User'
@@ -236,3 +234,11 @@ QINIU_SECRET_KEY = os.environ.get('QINIU_SECRET_KEY', 'xxx')
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 FIELDS_STORED_IN_SESSION = ['ident', ]
+
+# CELERY STUFF
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Africa/Nairobi'

@@ -1,9 +1,7 @@
 # coding=utf-8
 from rest_framework import serializers
 
-from discuss.models import Discuss
 from posts.models import Post
-from users.serializers import UserSampleSerializer
 
 
 class PostSerializer(serializers.ModelSerializer):

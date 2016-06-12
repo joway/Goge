@@ -1,0 +1,21 @@
+image: python:3.5.1
+services:
+    - mysql
+    - redis
+
+env:
+    - DAO_TEST = "True"
+    - MYSQL_INSTANCE_NAME = "test"
+    - MYSQL_USERNAME = "root"
+    - MYSQL_PASSWORD = ""
+    - SECRET_KEY=+p$6nzend1xxxxxxxxxxxxxxxxxxxxxxxxsra#nral3
+
+
+install:
+    - pip install -r requirements.txt
+
+before_script:
+    - python manage.py migrate --noinput
+
+script:
+    - python manage.py test

@@ -12,12 +12,15 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /goge
 WORKDIR /goge
 
-# for cache
 # Configure Nginx and uwsgi
 ADD ./requirements.txt /goge/requirements.txt
 RUN rm /etc/nginx/sites-enabled/default
 ADD ./.deploy/nginx.conf /etc/nginx/sites-enabled/goge.conf
-ADD ./.deploy/supervisord.conf /etc/supervisor/conf.d/
+
+# supervisord
+ADD ./.deploy/uwsgi_nginx_supervisord.conf /etc/supervisor/conf.d/
+ADD ./.deploy/celery_supervisord.conf /etc/supervisor/conf.d/
+
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
