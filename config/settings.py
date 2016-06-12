@@ -111,11 +111,11 @@ if DEBUG or TESTING:
 else:
     DATABASES = {
         'default': {
-            'NAME': os.environ.get('MYSQL_INSTANCE_NAME', 'xxx'),
+            'NAME': os.environ.get('MYSQL_INSTANCE_NAME', 'goge'),
             'ENGINE': 'django.db.backends.mysql',
-            'USER': os.environ.get("MYSQL_USERNAME", 'xxx'),
-            'PASSWORD': os.environ.get("MYSQL_PASSWORD", 'xxx'),
-            'HOST': os.environ.get("MYSQL_HOST", 'xxx'),
+            'USER': os.environ.get("MYSQL_USERNAME", 'root'),
+            'PASSWORD': os.environ.get("MYSQL_PASSWORD", ''),
+            'HOST': os.environ.get("MYSQL_HOST", 'localhost'),
             'PORT': os.environ.get("MYSQL_PORT", 3306),
         },
     }

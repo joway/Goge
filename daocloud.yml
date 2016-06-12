@@ -5,7 +5,7 @@ services:
 
 env:
     - DAO_TEST = "True"
-    - MYSQL_INSTANCE_NAME = "test"
+    - MYSQL_INSTANCE_NAME = "goge"
     - MYSQL_USERNAME = "root"
     - MYSQL_PASSWORD = ""
     - SECRET_KEY=+p$6nzend1xxxxxxxxxxxxxxxxxxxxxxxxsra#nral3
