@@ -1,9 +1,8 @@
-Chirp
+Goge
 ======
-![](https://api.travis-ci.org/joway/Chirp.svg?branch=master)
+![](https://api.travis-ci.org/joway/Goge.svg?branch=master)
 
-一个在中国大陆地区的 disqus 替代品 .
-
+Blog Search Engine .
 
 LICENSE
 ---
