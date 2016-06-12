@@ -1,5 +1,5 @@
 FROM python:3.5.1
-MAINTAINER joway wong "joway.w@gmail.com"
+MAINTAINER Joway Wong "joway.w@gmail.com"
 
 # Install packages
 RUN apt-get update && apt-get install -y \
