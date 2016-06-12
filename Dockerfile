@@ -9,7 +9,10 @@ RUN apt-get update && apt-get install -y \
     nginx \
     supervisor
 
-RUN mkdir /goge /goge/celery
+RUN mkdir /goge
+RUN touch /var/log/celery/goge_worker.log \
+    /var/log/celery/goge_beat.log
+
 WORKDIR /goge
 
 # Configure Nginx and uwsgi

@@ -32,7 +32,7 @@ except ImportError:
     pass
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
 # Application definition
 
@@ -189,8 +189,8 @@ DOMAIN_URL = 'http://goge.me'
 EMAIL_BACKEND = 'sendcloud.SendCloudBackend'
 DEFAULT_FROM_EMAIL = 'admin@joway.wang'
 MAIL_DEBUG = False
-MAIL_APP_USER = os.environ.get('MAIL_APP_USER')
-MAIL_APP_KEY = os.environ.get('MAIL_APP_KEY')
+MAIL_APP_USER = os.environ.get('MAIL_APP_USER', 'xxx')
+MAIL_APP_KEY = os.environ.get('MAIL_APP_KEY', 'xxx')
 
 # oauth
 SOCIAL_AUTH_ADMIN_USER_SEARCH_FIELDS = ['username', 'email']
@@ -218,14 +218,14 @@ LOGIN_URL = '/user/oauth/'
 # LOGIN_REDIRECT_URL = 'http://localhost:63342/gh-pages/index.html'
 
 # oauth
-SOCIAL_AUTH_QQ_KEY = os.environ.get('SOCIAL_AUTH_QQ_KEY')
-SOCIAL_AUTH_QQ_SECRET = os.environ.get('SOCIAL_AUTH_QQ_SECRET')
+SOCIAL_AUTH_QQ_KEY = os.environ.get('SOCIAL_AUTH_QQ_KEY', 'xxx')
+SOCIAL_AUTH_QQ_SECRET = os.environ.get('SOCIAL_AUTH_QQ_SECRET', 'xxx')
 
-SOCIAL_AUTH_GITHUB_KEY = os.environ.get('SOCIAL_AUTH_GITHUB_KEY')
-SOCIAL_AUTH_GITHUB_SECRET = os.environ.get('SOCIAL_AUTH_GITHUB_SECRET')
+SOCIAL_AUTH_GITHUB_KEY = os.environ.get('SOCIAL_AUTH_GITHUB_KEY', 'xxx')
+SOCIAL_AUTH_GITHUB_SECRET = os.environ.get('SOCIAL_AUTH_GITHUB_SECRET', 'xxx')
 
-SOCIAL_AUTH_CODING_KEY = os.environ.get('SOCIAL_AUTH_CODING_KEY')
-SOCIAL_AUTH_CODING_SECRET = os.environ.get('SOCIAL_AUTH_CODING_SECRET')
+SOCIAL_AUTH_CODING_KEY = os.environ.get('SOCIAL_AUTH_CODING_KEY', 'xxx')
+SOCIAL_AUTH_CODING_SECRET = os.environ.get('SOCIAL_AUTH_CODING_SECRET', 'xxx')
 
 DEFAULT_AVATAR = 'https://dn-joway.qbox.me/1465087838481_user_116px_1196112_easyicon.net.png'
 
