@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 db.sqlite3
+docker-compose.yml
 goge.sock
 # Byte-compiled / optimized / DLL files
 __pycache__/
