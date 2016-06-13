@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     nginx \
     supervisor
 
-RUN mkdir /goge /goge/log/celery
+RUN mkdir -p /goge /goge/logs/celery
 WORKDIR /goge
 # for celery log files
 RUN touch /goge/logs/celery/goge_worker.log \
