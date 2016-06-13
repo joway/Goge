@@ -30,7 +30,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # oneapm
-pip install -i http://pypi.oneapm.com/simple  --trusted-host pypi.oneapm.com --upgrade blueware
+RUN pip install -i http://pypi.oneapm.com/simple  --trusted-host pypi.oneapm.com --upgrade blueware
 
 
 
