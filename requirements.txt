@@ -22,4 +22,3 @@ requests-oauthlib==0.6.1
 rest-social-auth==0.4.4
 shortuuid==0.4.3
 six==1.10.0
-uWSGI==2.0.13.1
