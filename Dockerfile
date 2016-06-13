@@ -9,13 +9,11 @@ RUN apt-get update && apt-get install -y \
     nginx \
     supervisor
 
-RUN mkdir /goge /var/log/celery
+RUN mkdir /goge /goge/log/celery
 WORKDIR /goge
 # for celery log files
-RUN touch /var/log/celery/goge_worker.log \
-    /var/log/celery/goge_beat.log
-
-VOLUME /var/log
+RUN touch /goge/logs/celery/goge_worker.log \
+    /goge/logs/celery/goge_beat.log
 
 # Configure Nginx and uwsgi
 ADD ./requirements.txt /goge/requirements.txt
@@ -35,6 +33,8 @@ RUN pip install -i http://pypi.oneapm.com/simple  --trusted-host pypi.oneapm.com
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD . /goge
+
+VOLUME /goge
 
 EXPOSE 80
 CMD ["supervisord", "-n"]
