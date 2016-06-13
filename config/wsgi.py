@@ -8,9 +8,11 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
 import os
+import blueware.agent
 
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+blueware.agent.initialize('blueware.ini')
 
 application = get_wsgi_application()
