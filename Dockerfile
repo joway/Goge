@@ -28,6 +28,12 @@ ADD ./.deploy/celery_supervisord.conf /etc/supervisor/conf.d/
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+# oneapm
+pip install -i http://pypi.oneapm.com/simple  --trusted-host pypi.oneapm.com --upgrade blueware
+
+
+
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 
