@@ -2,6 +2,7 @@
 ### Python template
 db.sqlite3
 docker-compose.yml
+.env
 goge.sock
 # Byte-compiled / optimized / DLL files
 __pycache__/

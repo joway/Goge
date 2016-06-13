@@ -32,10 +32,7 @@ RUN pip install -r requirements.txt
 # oneapm
 RUN pip install -i http://pypi.oneapm.com/simple  --trusted-host pypi.oneapm.com --upgrade blueware
 
-
-
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
 
 ADD . /goge
 
