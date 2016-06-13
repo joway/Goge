@@ -9,11 +9,13 @@ RUN apt-get update && apt-get install -y \
     nginx \
     supervisor
 
-RUN mkdir /goge
+RUN mkdir /goge /var/log/celery
+WORKDIR /goge
+# for celery log files
 RUN touch /var/log/celery/goge_worker.log \
     /var/log/celery/goge_beat.log
 
-WORKDIR /goge
+VOLUME /var/log
 
 # Configure Nginx and uwsgi
 ADD ./requirements.txt /goge/requirements.txt
@@ -27,6 +29,7 @@ ADD ./.deploy/celery_supervisord.conf /etc/supervisor/conf.d/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
 
 ADD . /goge
 

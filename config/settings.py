@@ -236,9 +236,12 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 FIELDS_STORED_IN_SESSION = ['ident', ]
 
 # CELERY STUFF
-BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+REDIS_PASS = os.environ.get('REDIS_PASS', '')
+REDIS_HOST = os.environ.get('REDIS_HOST', 'localhost')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
+BROKER_URL = 'redis://:' + REDIS_PASS + '@' + REDIS_HOST + ':' + REDIS_PORT
+CELERY_RESULT_BACKEND = 'redis://:' + REDIS_PASS + '@' + REDIS_HOST + ':' + REDIS_PORT
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Africa/Nairobi'
+CELERY_TIMEZONE = 'Asia/Shanghai'
